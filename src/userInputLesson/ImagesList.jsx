@@ -1,9 +1,10 @@
 import React from "react";
+import ImageCard from "./ImageCard";
 import "./ImageList.css";
 
 const ImageList = ({ images }) => {
   const ImagesRendered = images.map(({ description, id, urls }) => {
-    return <img alt={description} key={id} src={urls.regular} />;
+    return <ImageCard description={description} key={id} image={urls.regular} />;
   });
   return <div className="grid-list">{ImagesRendered}</div>;
 };
